@@ -9,15 +9,26 @@
 
 </head>
 <body>
-    <h1>Simulator</h1>
+
+    <header>
+
+        <h1 style="display: inline">Simulator</h1>
+        <select id="choices" name="choices">
+            <option value="option1">60/40</option>
+            <option value="option2">50/50</option>
+            <option value="option3">70/30</option>
+        </select>
+
+    </header>
+
     <form id="calculatorForm">
         <table>
             <thead>
                 <tr>
                     <th>Module</th>
                     <th>Coefficient</th>
-                    <th>Continuous Assessment CC (40%)</th>
-                    <th>Exam (60%)</th>
+                    <th>Continuous Assessment CC (<span id="ccValue">40</span>%)</th>
+                    <th>Exam (<span id="examValue">60</span>%)</th>
                 </tr>
             </thead>
             <tbody>
@@ -102,6 +113,7 @@
             <div class="result" id="result"></div>
         </div>
     </form>
+
     <footer>
         <div class="links">
             <!-- <a href="sms:0696828271"><i class="fa fa-address-card" aria-hidden="true"></i></a> -->
@@ -110,7 +122,7 @@
             <a href="https://www.facebook.com/abd.esslem.562/" target="_blanck"><p>Fb </p><i class="fab fa-facebook" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/abdesslem_mez/?hl=fr" target="_blanck"><p>Insta </p><i class="fab fa-instagram" aria-hidden="true"></i></a>
             <a href="https://github.com/mzwr" target="_blanck"><p>Github </p><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/abdelsselam-mezouari-2b080a285/"><p>Linkedin </p><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/abdelsselam-mezouari-2b080a285/" target="_blanck"><p>Linkedin </p><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             
           </div>
     </footer>
