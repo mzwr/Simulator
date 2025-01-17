@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <title>Simulator</title>
+
+</head>
+<body>
+    <h1>Simulator</h1>
+    <form id="calculatorForm">
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Coefficient</th>
+                    <th>Continuous Assessment CC (40%)</th>
+                    <th>Exam (60%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Explicitly written rows for all 12 modules -->
+                <tr>
+                    <td><input type="text" placeholder="Module 1"></td>
+                    <td><input type="number" min="1" step="1" id="coef1" onchange="toggleCC(1)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc1"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 2"></td>
+                    <td><input type="number" min="1" step="1" id="coef2" onchange="toggleCC(2)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc2"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 3"></td>
+                    <td><input type="number" min="1" step="1" id="coef3" onchange="toggleCC(3)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc3"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam3"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 4"></td>
+                    <td><input type="number" min="1" step="1" id="coef4" onchange="toggleCC(4)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc4"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 5"></td>
+                    <td><input type="number" min="1" step="1" id="coef5" onchange="toggleCC(5)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc5"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam5"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 6"></td>
+                    <td><input type="number" min="1" step="1" id="coef6" onchange="toggleCC(6)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc6"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam6"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 7"></td>
+                    <td><input type="number" min="1" step="1" id="coef7" onchange="toggleCC(7)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc7"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam7"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 8"></td>
+                    <td><input type="number" min="1" step="1" id="coef8" onchange="toggleCC(8)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc8"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam8"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 9"></td>
+                    <td><input type="number" min="1" step="1" id="coef9" onchange="toggleCC(9)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc9"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam9"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 10"></td>
+                    <td><input type="number" min="1" step="1" id="coef10" onchange="toggleCC(10)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc10"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam10"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 11"></td>
+                    <td><input type="number" min="1" step="1" id="coef11" onchange="toggleCC(11)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc11"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam11"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Module 12"></td>
+                    <td><input type="number" min="1" step="1" id="coef12" onchange="toggleCC(12)"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="cc12"></td>
+                    <td><input type="number" min="0" max="20" step="0.1" id="exam12"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="show">
+            <button type="button" onclick="calculateAverage()">Calculate Average</button>
+            <div class="result" id="result"></div>
+        </div>
+    </form>
+    <footer>
+        <div class="links">
+            <!-- <a href="sms:0696828271"><i class="fa fa-address-card" aria-hidden="true"></i></a> -->
+            <a href="tel:0696828271"><p>Phone </p><i class="fa fa-phone" aria-hidden="true"></i></a>
+            <a href="mailto:abdesslemmez@gmail.com"><p>Email </p><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/abd.esslem.562/" target="_blanck"><p>Fb </p><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/abdesslem_mez/?hl=fr" target="_blanck"><p>Insta </p><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://github.com/mzwr" target="_blanck"><p>Github </p><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/abdelsselam-mezouari-2b080a285/"><p>Linkedin </p><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            
+          </div>
+    </footer>
+
+<script src="main.js"></script>
+</body>
+</html>
