@@ -21,16 +21,24 @@ function calculateAverage() {
         const exam = parseFloat(document.getElementById(`exam${i}`).value) || 0;
 
         if (coef > 0) { // Include only modules with a valid coefficient
-            const moduleAverage = coef === 1 ? exam : (cc + 2 * exam) / 3;
+            let moduleAverage;
+
+            if (coef === 1) {
+                // If coefficient is 1, exam contributes 100%
+                moduleAverage = exam;
+            } else {
+                // If coefficient is greater than 1, CC = 40% and Exam = 60%
+                moduleAverage = (0.4 * cc) + (0.6 * exam);
+            }
+
             totalWeightedSum += moduleAverage * coef;
             totalCoefficients += coef;
         }
     }
 
-
-
+    
     const finalAverage = totalCoefficients > 0 ? (totalWeightedSum / totalCoefficients).toFixed(2) : 0;
-  
+    
     let comment = ""
     if(finalAverage >= 10){
         comment = "bsahtk 👋😄"
@@ -38,7 +46,6 @@ function calculateAverage() {
         comment = "Rattrapage 😂"
     }
 
-    document.getElementById("result").textContent = `You get : ${finalAverage}......!${comment}`;
-    
+    document.getElementById("result").textContent = `Your get: ${finalAverage}.... ${comment}`;
 }
-
+ 
